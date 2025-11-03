@@ -29,7 +29,9 @@ jobs:
       run: echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
 
     - name: Run tests
-      run: pytest -q
+      run: |
+        export PYTHONPATH=.
+        pytest -q
 
     - name: Docker meta
       id: meta
